@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>bulls and cows</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div >
+    <ion-card class="center-container">
+      <ion-item style="text-align: center; padding-right: 10px !important;" >
+        <ion-input [(ngModel)]="usrInput"  maxlength=4 type="numberic" ></ion-input>
+      </ion-item>
+      <ion-label>{{previousNum}}</ion-label>
+      <ion-label style="color: brown;">{{status}}</ion-label>
+      <ion-label style="color: brown; margin-top: 10px;">Round: {{round}}</ion-label>
+      <ion-button size="small" style="margin-top: 10px;" (click)="calculateNum()" >
+        Guess
+      </ion-button>
+      <ion-button size="small" style="margin-top: 10px;" color="danger" (click)="toggleAns()" >
+        See Answer
+      </ion-button>
+      <ion-label *ngIf="toggleAnswer"  style="color: brown;">{{arr}}</ion-label>
+    </ion-card>
+
+  </div>
+</ion-content>
